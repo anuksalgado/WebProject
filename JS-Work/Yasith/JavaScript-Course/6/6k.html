@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+
+  <body>
+    <p>Cart Quantity</p>
+    <button onclick="
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity + 1;
+      if(toBeCount > 10) {
+        alert('The cart is full');
+      }
+      else {
+        cartQuantity++;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">Add to Cart</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity + 2;
+      if(toBeCount > 10) {
+        alert('The cart is full');
+      }
+      else {
+        cartQuantity += 2;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">+2</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity + 3;
+      if(toBeCount > 10) {
+        alert('The cart is full');
+      }
+      else {
+        cartQuantity += 3;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">+3</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity + 4;
+      if(toBeCount > 10) {
+        alert('The cart is full');
+      }
+      else {
+        cartQuantity += 4;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">+4</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity + 5;
+      if(toBeCount > 10) {
+        alert('The cart is full');
+      }
+      else {
+        cartQuantity += 5;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">+5</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity - 1;
+      if(toBeCount < 0) {
+        alert('Not enough items in the cart');
+      }
+      else {
+        cartQuantity--;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">Remove from cart</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity - 2;
+      if(toBeCount < 0) {
+        alert('Not enough items in the cart');
+      }
+      else {
+        cartQuantity -= 2;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">-2</button>
+
+    <button onclick="
+      let toBeCount = cartQuantity - 3;
+      if(toBeCount < 0) {
+        alert('Not enough items in the cart');
+      }
+      else {
+        cartQuantity -= 3;
+        console.log(`Cart Quantity: ${cartQuantity}`);
+      }
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart quantity reset');
+      console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset Cart</button>
+    <script>
+      let cartQuantity = 0;
+    </script>
+  </body>
+</html>
