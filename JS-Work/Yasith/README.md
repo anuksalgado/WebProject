@@ -1,0 +1,1 @@
+# This folder contains all work regarding JS video we are learning from

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>6f</title>
+  </head>
+
+  <body>
+    <script>
+      let number = Math.random();
+      let result = '';
+      let guess = 'Heads';
+
+      if(number < 0.5) {
+        result = 'Heads';
+      }
+      else {
+        result = 'Tails';
+      }
+
+      if(guess == result) {
+        console.log('You win!');
+      }
+      else if(guess !== result) {
+        console.log('You lose!');
+      }
+    </script>
+  </body>
+</html>
