@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>8i</title>
+  </head>
+
+  <body>
+    <button onclick="
+      guess = 'Heads';
+      playGame(guess);
+    ">heads</button>
+
+    <button onclick="
+      guess = 'Tails';
+      playGame(guess);
+    ">tails</button>
+
+    <script>
+      let score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      let guess = '';
+
+      function playGame(guess) {
+        let number = Math.random();
+        let result = '';
+
+        if(number < 0.5) {
+          result = 'Heads';
+        }
+        else {
+          result = 'Tails';
+        }
+
+        if(guess == result) {
+          console.log('You win!');
+          score.wins++;
+        }
+        else if(guess !== result) {
+          console.log('You lose!');
+          score.losses++;
+        }
+
+        localStorage.setItem('score', JSON.stringify(score));
+
+        console.log(`Wins: ${score.wins} Losses: ${score.losses}`);
+      }
+    </script>
+  </body>
+</html>
