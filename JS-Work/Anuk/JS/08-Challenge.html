@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    coin-Flip
+    </title>
+    
+  </head>
+
+  <body>
+    <button onclick="
+      playGame('Heads');
+      ">Heads</button>
+
+    <button onclick="
+    playGame('Tails')
+    ">Tails</button>
+
+    <button onclick="
+    score.win = 0;
+    score.loss = 0;
+    localStorage.removeItem('score');
+    console.log('Scores have been reset')
+    ">Reset button</button>
+
+    <script>
+
+      /* first we need to retrive the JSON image in the local storage and set it to the score object */
+
+      let score = JSON.parse(localStorage.getItem('score'));
+
+      if(score === null){
+        <!--Create the object is it doesnt exist-->
+        score = {
+          win: 0,
+          loss: 0
+        };
+      }
+
+     function playGame(guess)
+     {
+      const randomNumber = Math.random();
+      if(randomNumber < 0.5){
+        result = 'Heads'
+      }else{
+        result = 'Tails'
+      }
+
+      if(guess === result){
+        console.log('Win!')
+        score.win += 1;
+      }else{
+        console.log('Lose')
+        score.loss +=1;
+      }
+      console.log(`the score currently is Wins: ${score.win} and Losses are: ${score.loss}`)
+
+      localStorage.setItem('score', JSON.stringify(score))
+     }
+    </script>
+  </body>
+</html>
