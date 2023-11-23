@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Cart quantity
+    </title>
+    
+  </head>
+
+  <body>
+    <button onclick="
+      console.log('Cart Quantity: '+ cartQuantity);
+      ">Show quantity</button>
+
+    <button onclick="
+    updateCartQuantity(+1);
+    
+    ">Add to Cart</button>
+
+    <button onclick="
+    updateCartQuantity(+2);
+    ">+2</button>
+
+    <button onclick="
+    updateCartQuantity(+3);
+    ">+3</button>
+
+    <button onclick="
+    updateCartQuantity(+4);
+    ">+4</button>
+
+    <button onclick="
+    updateCartQuantity(+5);
+    ">+5</button>
+
+    <button onclick="
+    updateCartQuantity(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+    updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick="
+    updateCartQuantity(-3);
+    ">-3</button>
+
+    <button onclick="
+    cartQuantity = 0;
+    console.log('Cart was reset');
+    console.log('Cart Quantity: '+ cartQuantity);
+    ">reset cart</button>
+
+    <script>
+     let cartQuantity = 0;
+
+     function updateCartQuantity(cartChangeAmount){
+        if(cartQuantity + cartChangeAmount > 10 )
+        {
+          <!--Early return statement-->
+          alert('Cart exceeding 10 items')
+          return;
+        }
+        else if(cartQuantity + cartChangeAmount < 0)
+        {
+          alert('Cart cannot be below 0 items')
+          return;
+        }
+        else{
+          cartQuantity = cartQuantity + cartChangeAmount;
+
+          console.log('Cart Quantity: '+ cartQuantity);
+        }
+     }
+
+    </script>
+  </body>
+</html>
