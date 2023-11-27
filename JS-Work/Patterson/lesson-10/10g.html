@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10g exercise</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+        .btn{
+            @apply bg-gray-300 text-6xl p-4 rounded-lg hover:ring-1 hover:ring-black hover:ring-offset-0 hover:shadow-2xl hover:shadow-zinc-600 transition ease-out duration-300
+        }
+
+        .is-toggled{
+            @apply bg-black text-white
+        }
+
+        /*class to apply gradient background for buttons on mouseOver*/
+        .gradient-background{
+            background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+            background-size: 180% 180%;
+            animation: gradient-animation 5s ease infinite;
+        }
+
+        /*This marks the positions of the colors in the gradient background*/
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--container-->
+    <div class="h-screen flex gap-10 justify-center items-center">
+        <!--buttons-->
+        <a href="#" class="btn gaming">
+            <span>Gaming</span>
+        </a>
+        <a href="#" class="btn music">
+            <span>Music</span>
+        </a>
+        <a href="#" class="btn tech">
+            <span>Tech</span>
+        </a>
+    </div>
+
+
+    <script type="text/javascript">
+        var arrBtn = document.querySelectorAll('.btn');
+
+        for (let i = 0; i < arrBtn.length; i++) {
+            arrBtn[i].addEventListener("click", function () {
+                if (!(arrBtn[i].classList.contains('is-toggled'))) {
+                    arrBtn[i].classList.toggle('is-toggled');
+                }
+                else {
+                    arrBtn[i].classList.toggle('is-toggled');
+                }
+
+                let clickedBtn = i;
+
+                for (let b = 0; b < arrBtn.length; b++) {
+                    if (b !== clickedBtn) {
+                        if (arrBtn[b].classList.contains('is-toggled')) {
+                            arrBtn[b].classList.toggle('is-toggled');
+                        }
+                    }
+                }
+            })
+
+            arrBtn[i].addEventListener("mouseover", function () {
+
+                if (!(arrBtn[i].classList.contains('gradient-background'))) {
+                    arrBtn[i].classList.toggle('gradient-background');
+                }
+
+                arrBtn[i].addEventListener("mouseout", function () {
+                    if (arrBtn[i].classList.contains('gradient-background')) {
+                        arrBtn[i].classList.toggle('gradient-background');
+                    }
+                })
+            })
+        }
+
+
+    </script>
+</body>
+
+</html>
