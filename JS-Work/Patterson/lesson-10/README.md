@@ -1,0 +1,1 @@
+# Tailwind is used here on top of vanilla css which is a css framework , because ive been practicing with tailwind after learning vanilla css and find it time consuming to style each element without it.
