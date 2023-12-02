@@ -1,0 +1,1 @@
+This directory contains the methods needed to implement the email authentication. I have adjusted this to be using Google authenticator instead
