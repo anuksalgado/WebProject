@@ -15,8 +15,8 @@ Having app permission in order to access certain data or functions in an app, wh
 
 ## Sprint use cases for the app permissions.
 
-1. The permissions should be run–time permission.
-2. Create a message with enough details to convince the user that it’s safe to accept the request 
-2. Generating the app permission feature to compatible with multiple OS’s (Android/IOS).
-3. Testing.
+1. The types of permissions. 
+2. As a Customer, i should get a brief statement of the permission type.
+3. The types of OS's it should be compatible with.
+4. Testing.
 
