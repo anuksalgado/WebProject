@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    Advanced functions
+    </title>
+  </head>
+
+  <body>
+    <script>
+    // function greeting(){
+    //   console.log('Hello')
+    // };
+
+    // greeting();
+
+    // const num = 2;
+    // const function1 = function(){
+    //   console.log('hello2');
+    // };
+
+    // console.log(function1);
+    // console.log(typeof function1);
+    // function1();
+
+    // const object1 = {
+    //   num: 2,
+    //   fun: function greeting(){
+    //     console.log('Hello3')
+    //   }
+    // };
+    // object1.fun();
+
+    // function display(param){
+    //     console.log(param);
+    // }
+    // display(2);
+
+    // setTimeout(function(){
+    //   console.log('Time out');
+    // }, 3000);
+
+    // setInterval( function(){
+    //   console.log('Time out');
+    // }, 3000);
+
+
+    [
+      'make dinner',
+      'wash dishes',
+      'watch youtube'
+    ].forEach(function(value,index){
+      if(value=== 'wash dishes'){
+        return;
+      }else{
+      console.log(value + `with index ${index}`);
+      }
+    });
+    </script>
+  </body>
+</html>
