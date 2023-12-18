@@ -1,0 +1,118 @@
+<mxfile host="app.diagrams.net" modified="2023-12-18T21:15:00.907Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="1_9lA-Erq_NDKkUyN55v" version="22.1.11" type="device">
+  <diagram name="Page-1" id="zhGm2WdU3kiATIOXc7Mh">
+    <mxGraphModel dx="1363" dy="761" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-8" target="BXvD1MTPvpz4ui3pKfyD-10" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-8" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="265" y="60" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-10" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="170" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="180" y="280" />
+              <mxPoint x="130" y="280" />
+              <mxPoint x="130" y="120" />
+              <mxPoint x="220" y="120" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-10" target="BXvD1MTPvpz4ui3pKfyD-14" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-10" value="Validate" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="180" y="180" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-11" value="do/check user" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="BXvD1MTPvpz4ui3pKfyD-10" vertex="1">
+          <mxGeometry x="50" y="68" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-12" value="Login" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="290" y="108" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-13" value="[not valid]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="50" y="180" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-14" target="BXvD1MTPvpz4ui3pKfyD-18" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-14" value="Request email address" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="680" y="180" width="280" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-17" value="do/prompt user to enter email address" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="BXvD1MTPvpz4ui3pKfyD-14" vertex="1">
+          <mxGeometry x="25" y="60" width="230" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-16" value="[valid]/User access email address verification" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="395" y="248" width="260" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-18" target="BXvD1MTPvpz4ui3pKfyD-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-18" value="Third party authenticator verify email" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="1450" y="180" width="330" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-21" value="do/authenticator send verification code or link to email" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="BXvD1MTPvpz4ui3pKfyD-18" vertex="1">
+          <mxGeometry x="10" y="60" width="310" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-20" value="[email address entered]/System send email to third party authenticator" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1005" y="248" width="400" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-22" target="BXvD1MTPvpz4ui3pKfyD-27" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-22" target="BXvD1MTPvpz4ui3pKfyD-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-22" value="User enter authentication" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2120" y="180" width="300" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-26" value="do/check if entered code is correct or link clicked&amp;nbsp;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="BXvD1MTPvpz4ui3pKfyD-22" vertex="1">
+          <mxGeometry x="10" y="60" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-24" value="[message sent]/user click on link or retrieve code from mail" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="1780" y="248" width="340" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-27" target="BXvD1MTPvpz4ui3pKfyD-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-27" value="Complete authentication" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="2170" y="520" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-30" value="do/mark user email as verified" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="BXvD1MTPvpz4ui3pKfyD-27" vertex="1">
+          <mxGeometry x="10" y="50" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-29" value="[correct code entered or link clicked]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="2270" y="428" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-31" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="2250" y="870" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-32" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="2255" y="875" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-34" value="[email verified]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="2270" y="780" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-36" value="[wrong code entered or link clicked]" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="1" vertex="1">
+          <mxGeometry x="2415" y="248" width="210" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="BXvD1MTPvpz4ui3pKfyD-37" target="BXvD1MTPvpz4ui3pKfyD-31" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2635" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-37" value="" style="swimlane;startSize=0;" parent="1" vertex="1">
+          <mxGeometry x="2530" y="460" width="210" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="BXvD1MTPvpz4ui3pKfyD-39" value="User email not verified" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="BXvD1MTPvpz4ui3pKfyD-37" vertex="1">
+          <mxGeometry x="35" y="30" width="140" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
