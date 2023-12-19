@@ -14,7 +14,7 @@
 - Define and enforce access control rules to ensure that users can only access functionalities and data appropriate to their roles.
 
 ## 5. Usability and Accessibility:
-- The interface should be user-friendly and adhere to accessibility standards, ensuring that users with disabilities can navigate and interact with the system. [reference to understand accessibility standards -](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG 'READMORE')
+- The interface should be user-friendly and adhere to accessibility standards, ensuring that users with disabilities can navigate and interact with the system. [reference to understand accessibility standards](https://developer.mozilla.org/en-US/docs/Web/Accessibility/Understanding_WCAG)
 - Provide user documentation and tutorials to assist users in utilizing features effectively.
 
 ## 6. Internationalization and Localization:
