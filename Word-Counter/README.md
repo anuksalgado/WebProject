@@ -1,0 +1,1 @@
+This folder is about the word counter back end and front end. Both teams will work on this at the same time. Use branching if needed
