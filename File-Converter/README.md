@@ -4,11 +4,11 @@
 
 - The converted document would not preserve exact indentation but would include all the elements of the word file with images embedded.
 
-# To run the program and information about some folders/files
+# To run the program
 
 - open new terminal within vscode and cd into the proper directory the File-Converter and then type < npm run build-css > to run script to make Tailwind changes effective and to watch for future changes automatically, and then open another terminal and type < nodemon TestServer.js > to start the server. (by using nodemon you dont have to type the command to restart the server each time after a change, it automatically does it when the changes are saved so you can directly refresh the browser to observe changes). afterwards go to browser and type http://localhost:3000/ and the homepage that is uploadDoc.ejs should render.
 
-# Folder Structure
+# Folder/File Structure
 
 - "public" is where the static files are such as styles.css, etc. Within public folder the Document folder is where when you upload the word doc it first gets saved into that folder and then after conversion the converted pdf file gets saved to the same Document folder itself.
 
