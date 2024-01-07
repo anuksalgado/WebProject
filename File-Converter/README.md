@@ -2,7 +2,7 @@
 
 - To NOTE: Patterson Leon's Document Converter shall not be used for complex word structure files, as it uses Mammoth JS and puppeteer to do the conversion. To get proper detailed conversion of word to pdf file, we"ll have to use a corporate API such as pspd or convertapi, etc which we have to pay money for.
 
-The converted document would not preserve exact indentation but would include all the elements of the word file with images embedded.
+- The converted document would not preserve exact indentation but would include all the elements of the word file with images embedded.
 
 # TODO's and extra mentions
  
