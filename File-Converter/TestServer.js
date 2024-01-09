@@ -103,7 +103,7 @@ TestServer.get("/", (req, res) => {
     res.render("uploadDoc.ejs");
 });
 
-TestServer.post("/convertdocument", upload.fields([
+TestServer.post("/getdocument", upload.fields([
     { name: 'doc-upload', maxCount: 1 }
 ]), async (req, res) => {
     console.log(`Document successfully uploaded: ${docName}`);

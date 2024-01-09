@@ -10,25 +10,29 @@
 
 <body class="m-0 p-0">
 
-    <div class="h-screen w-screen flex flex-col items-center justify-center gap-4">
+    <div id="thankyou" class="h-screen w-screen flex flex-col items-center justify-center gap-4">
         <h1>Thank you for choosing WebProject!</h1>
-        <h2>Click the button below to get PDF</h2>
-        <button id="downloadButton" class="border-2 border-black">Download Now</button>
+        <h2 id="button-heading">Click the button below to get PDF</h2>
+        <button id="downloadButton" class="border-2 border-black">Get PDF</button>
     </div>
 
+    <iframe id="pdfViewer" class="h-screen w-screen border-none hidden"></iframe>
 
     <script type="text/javascript">
         // To handle download
         document.addEventListener("DOMContentLoaded", function () {
             const filePath = "<%= filepath %>";
             const downloadButton = document.getElementById('downloadButton');
+            const pdfViewer = document.getElementById('pdfViewer');
 
             // Function to handle the download
-            function downloadFile() {
-                window.location.href = filePath;
+            function viewPDF() {
+                document.getElementById('thankyou').classList.add('hidden');
+                document.getElementById('pdfViewer').classList.remove('hidden');
+                pdfViewer.src = filePath;
             }
 
-            downloadButton.addEventListener('click', downloadFile);
+            downloadButton.addEventListener('click', viewPDF);
         });
     </script>
 
