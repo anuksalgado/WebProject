@@ -24,7 +24,7 @@ Multiple types of file formats can be input to convert to pdf. That is it can co
 
 # Folder/File Structure
 
-- "public" is where the static files are such as styles.css, etc. Within public folder the Document folder is where when you upload the word doc it first gets saved into that folder and then after conversion the converted pdf file gets saved to the same Document folder itself.
+- "public" is where the static files are such as styles.css, etc. Within public folder the Document folder is where when you upload the word doc it first gets saved into that folder and then after conversion the converted pdf file gets saved to the same Document folder within a sub folder.
 
 - "src" is where the usual styles.css file is located, and its located in the src folder because Tailwind takes input from that styles.css and outputs the styles.css file that is used by the program to the "public" folder. The program files all requiring styling link to the styles.css file inside the public folder.
 
