@@ -12,11 +12,15 @@
 
     <div id="thankyou" class="h-screen w-screen flex flex-col items-center justify-center gap-4">
         <h1>Thank you for choosing WebProject!</h1>
-        <h2 id="button-heading">Click the button below to get PDF</h2>
-        <button id="downloadButton" class="border-2 border-black">Get PDF</button>
+        <h2 id="button-heading">Click the button below to get PDF or Convert again</h2>
+        <div id="buttons" class="flex justify-center gap-4">
+            <a href="/"><button id="convert-again" class="border-2 border-black p-2">Convert Again</button></a>
+            <button id="downloadButton" class="border-2 border-black p-2">Get PDF</button>
+        </div>
+
     </div>
 
-    <iframe id="pdfViewer" class="h-screen w-screen border-none hidden"></iframe>
+    <!-- <iframe id="pdfViewer" class="h-screen w-screen border-none hidden"></iframe> -->
 
     <script type="text/javascript">
         // To handle download
@@ -27,12 +31,16 @@
 
             // Function to handle the download
             function viewPDF() {
-                document.getElementById('thankyou').classList.add('hidden');
+                /*document.getElementById('thankyou').classList.add('hidden');
                 document.getElementById('pdfViewer').classList.remove('hidden');
-                pdfViewer.src = filePath;
+                pdfViewer.src = filePath;*/
+
+                window.open(filePath, '_blank');
             }
 
             downloadButton.addEventListener('click', viewPDF);
+
+
         });
     </script>
 

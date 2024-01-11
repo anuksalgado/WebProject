@@ -1,12 +1,26 @@
 # Track-record and IMPORTANT (will be updated in the coming days if any change)
 
-- To NOTE: Patterson Leon's Document Converter shall not be used for complex word structure files, as it uses Mammoth JS and puppeteer to do the conversion. To get proper detailed conversion of word to pdf file, we"ll have to use a corporate API such as pspd or convertapi, etc which we have to pay money for.
+- The Document Converter now can convert accurately in A4 size using LibreOffice software directly.
+Multiple types of file formats can be input to convert to pdf. That is it can convert any document format that LibreOffice can import to a pdf file format. But this programs focus as of not is converting Word Docx Doc files to PDF.
 
-- The converted document would not preserve exact indentation but would include all the elements of the word file with images embedded.
+- NOTE: If the content is not in A4 format, the content would be cut into the subsequent pages.
+
+- Using MammothJS and puppeteer to do the conversion process was removed.
+
+- Using Unconv as an API to convert documents in LibreOffice was done, after that it was removed to implement a better solution as of now.
+
 
 # To run the program
+- First and foremost make sure you install LibreOffice software.
 
-- open new terminal within vscode and cd into the proper directory the File-Converter and then type < npm run build-css > to run script to make Tailwind changes effective and to watch for future changes automatically, and then open another terminal and type < nodemon TestServer.js > to start the server. (by using nodemon you dont have to type the command to restart the server each time after a change, it automatically does it when the changes are saved so you can directly refresh the browser to observe changes). afterwards go to browser and type http://localhost:3000/ and the homepage that is uploadDoc.ejs should render.
+- On mac to install using homebrew you can run < brew install --cask libreoffice > on the computer terminal. Then make sure the "soffice" executable is present, that should exactly be path "/Applications/LibreOffice.app/Contents/MacOS/soffice".
+
+- On windows install the LibreOffice software from the site normally. Then make sure the "soffice.exe" executable is present, that should exactly be path "C:\\Program Files\\LibreOffice\\program\\soffice.exe".
+(THIS HAS NOT BEEN TESTED ON WINDOWS).
+
+- open new terminal within vscode and cd into the proper directory the File-Converter and then type < npm run build-css > to run script to make Tailwind changes effective and to watch for future changes automatically, and then open another terminal and type < nodemon TestServer.js > to start the server(by using nodemon you dont have to type the command to restart the server each time after a change, it automatically does it when the changes are saved so you can directly refresh the browser to observe changes) or else usual node command to start the server would work as well. afterwards go to browser and type http://localhost:3000/ and the homepage that is uploadDoc.ejs should render.
+
+- NOTE: the < > arrow symbols are used above to mention terminal commands. Ignore them when running the commands.
 
 # Folder/File Structure
 
@@ -18,8 +32,18 @@
 
 - "TestServer.js" is the server file which handles the document conversion and rendering and communicating data with front-end.
 
+- "node_modules" folder is where all the dependencies packages are installed and used in the program.
+
 # TODO's and extra mentions
  
-- Proper Styling for the downloadDoc.ejs file needs to be done, and if the conversion was unsuccessfull for that styling needs to be done as well. Also overall styling can be improved in the coming days.
+- Proper Styling for the downloadDoc.ejs file can be done, and if the conversion was unsuccessfull for that styling needs to be done as well. Also overall styling can be improved in the coming days.
 
-- The animation used in the homepage was taken from a youtube video I reffered for an individual project of mine, which i cant find the video to mention as reference. 
+- The animation used in the homepage was taken from a youtube video I reffered for an individual project of mine, which i cant find the video to mention as reference.
+
+- On Linux we need to install the LibreOffice software and find the path the "soffice" package is located and then update the pathToOffice variable code to test it.
+
+- Tried Integrating Socket.io for real time updates between client and server. (Could not achieve this with current knowledge, will be integrating with time).
+
+- Loading animating should be added once convert button is clicked in uploadDoc.ejs to add more styling.
+
+- The option to select whether document is of docx , doc or other format does not have any functionality other than just styling and making it look like the user is required to select the correct option as per the document being uploaded for conversion.

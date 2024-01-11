@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload Doc</title>
     <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body class="m-0 p-0">
+
+
+
 
     <div class="bouncing-blobs-container">
         <div class="bouncing-blobs-glass"></div>
@@ -26,7 +31,7 @@
 
 
     <div class="px-36 py-4 h-screen w-screen">
-        <form action="/getdocument" method="post" enctype="multipart/form-data">
+        <form id="form" action="/getdocument" method="post" enctype="multipart/form-data">
             <div class="space-y-12">
                 <label for="document-upload-area" class="block text-sm font-medium leading-6 text-gray-900">Document
                     Upload</label>
@@ -37,19 +42,19 @@
                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
                         <option value="" disabled selected>--Select--</option>
                         <option value="doc">DOCX, DOC</option>
+                        <option value="other-format">Other Format</option>
                     </select>
 
                     <p class="text-sm self-center">to</p>
 
                     <select id="convert-to" name="convert-to" required
                         class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                        <option value="" disabled selected>--Select--</option>
-                        <option value="pdf">PDF</option>
+                        <option value="pdf" disabled selected>PDF</option>
                     </select>
                 </div>
 
                 <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
-                    <div class="text-center">
+                    <div>
                         <svg class="mx-auto" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" width="40" zoomAndPan="magnify"
                             viewBox="0 0 30 30.000001" height="40" preserveAspectRatio="xMidYMid meet" version="1.0">
@@ -66,7 +71,7 @@
                                     fill-opacity="1" fill-rule="nonzero" />
                             </g>
                         </svg>
-                        <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                        <div class="mt-4 flex text-sm leading-6 text-gray-600 justify-center">
                             <label for="doc-upload"
                                 class="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-0 hover:text-indigo-500">
                                 <span>Upload a file</span>
@@ -74,13 +79,13 @@
                             </label>
                             <p class="pl-1">or drag and drop</p>
                         </div>
-                        <p id="doc-name" class="text-xs leading-5 text-gray-600">word DOCX and DOC</p>
+                        <p id="doc-name" class="text-lg leading-5 text-gray-600 text-center"></p>
                     </div>
                 </div>
             </div>
 
             <div id="buttons" class="mt-6 justify-center gap-x-6 hidden">
-                <a href="/">
+                <a href="/" class="flex justify-center items-center">
                     <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
                 </a>
                 <button id="submit-btn" type="submit"
@@ -91,6 +96,7 @@
 
 
     <script type="text/javascript">
+
         document.getElementById('doc-upload').addEventListener('change', function () {
             // File has been selected, show the buttons
             document.getElementById('buttons').classList.remove("hidden");
@@ -101,26 +107,18 @@
             const fileNameElement = document.getElementById('doc-name');
             const fileInput = document.getElementById('doc-upload');
 
+
             if (fileInput.files.length > 0) {
-                fileNameElement.textContent = fileInput.files[0].name;
+                const fileName = fileInput.files[0].name.toLowerCase();
+                
+                fileNameElement.textContent = fileName;
             } else {
                 // Reset the text if no file is selected
-                fileNameElement.textContent = 'word DOCX and DOC';
+                fileNameElement.textContent = '';
             }
         });
 
-
         //Animation taken from a youtube video which i cant remember.
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const blogForm = document.getElementById('blogForm');
-
-            blogForm.addEventListener('submit', function (event) {
-                const textContentTextarea = document.getElementById('textContent');
-                textContentTextarea.value = textContentTextarea.value.replace(/\n/g, '<br>');
-            });
-        });
-
 
         const MIN_SPEED = 1.5
         const MAX_SPEED = 2.5
@@ -189,6 +187,9 @@
         }
 
         initBlobs()
+
+
+
     </script>
 
 </body>

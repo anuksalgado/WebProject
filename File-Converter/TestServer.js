@@ -1,12 +1,17 @@
 import express from "express";
 import bodyParser from "body-parser";
 import multer from "multer"; //To communicate files
-import axios from "axios"; //To simplify API communication if needed
-import { dirname } from "path";
+import { dirname, extname } from "path";
 import { fileURLToPath } from "url";
-import puppeteer from "puppeteer"; //To convert html to pdf
-import mammoth from "mammoth"; //To convert doc to html
 import fs from "fs";
+import { exec } from "child_process"; //Used to execute shell commands
+import util from "util"; //built-in Node.js module that provides utility functions.
+
+
+
+
+const execPromise = util.promisify(exec); // creates a Promise-based version of the exec function to use with asynchronous operations.
+
 
 const __dirname = dirname(fileURLToPath(import.meta.url)); //To get the whole path upto working directory
 
@@ -14,8 +19,11 @@ const TestServer = express();
 const port = 3000;
 
 
+
 TestServer.use(bodyParser.urlencoded({ extended: true }));
 TestServer.use(express.static("public"));
+
+
 
 let docName;
 
@@ -24,7 +32,7 @@ const storage = multer.diskStorage({
         cb(null, 'public/Document');
     },
     filename: (req, file, cb) => {
-        console.log(file);
+        //console.log(file);
         docName = file.originalname;
         cb(null, file.originalname);
     }
@@ -55,81 +63,79 @@ function fileExists(filePath) {
     }
 }
 
-// Function to convert Word to HTML using mammoth.js
-async function convertToHtml(inputPath) {
+
+let pathToOffice;
+
+const osPlatform = process.platform;
+
+if (osPlatform === 'win32' || osPlatform === 'win64') {
+    pathToOffice = 'C:\\Program Files\\LibreOffice\\program\\soffice.exe';
+} else if (osPlatform === 'darwin') {
+    pathToOffice = '/Applications/LibreOffice.app/Contents/MacOS/soffice';
+} else if (osPlatform === 'linux') {
+    pathToOffice = '' // have to enter the path according to how soffice is in linux //TODO
+} else {
+    console.error('Unsupported operating system');
+    process.exit(1);
+}
+
+
+async function convertWordToPdf(inputPath, outputPath) {
     try {
-        var options = {
-            styleMap: [
-                "u => strong", //anything that s underlined in the doc would be changed to strong in html 
-                "p[style-name^='Heading'] => h1:fresh", //any paragraph with style starting with Heading will be changed to a H1 tag
-                "comment-reference => sup" //html will include any comments in the doc as well
-            ]
-        };
+        // Convert using LibreOffice
+        const { stdout, stderr } = await execPromise(`"${pathToOffice}" --headless --invisible --convert-to pdf --outdir "${outputPath}" "${inputPath}"`);
+        if (stderr && !stderr.includes('Secure coding is not enabled for restorable state!')) {
+            throw new Error(stderr);
+        }
+        //console.log('Conversion successful:', stdout);
 
-
-        const result = await mammoth.convertToHtml({ path: inputPath }, options);
-        const html = result.value; // The generated HTML
-        const messages = result.messages; // Any messages, such as warnings during conversion
-        console.log(messages);
-        return html;
     } catch (error) {
-        console.error(error);
+        console.error('Error converting Word to PDF:', error);
         throw error;
     }
 }
 
-// Function to convert HTML to PDF using puppeteer
-async function convertToPdf(html, outputPath) {
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    await page.setContent(html);
-    await page.pdf({ path: outputPath, format: 'A4' });
-    await browser.close();
-}
 
-// Main function to convert Word to PDF
-async function convertWordToPdf(inputPath, outputPath) {
-    try {
-        const htmlContent = await convertToHtml(inputPath);
-        await convertToPdf(htmlContent, outputPath);
-        console.log('Conversion successful!');
-    } catch (error) {
-        console.error('Error converting Word to PDF:', error);
-    }
-}
 
 TestServer.get("/", (req, res) => {
-    //send homepage of document converter
+    //send homepage
     res.render("uploadDoc.ejs");
 });
+
 
 TestServer.post("/getdocument", upload.fields([
     { name: 'doc-upload', maxCount: 1 }
 ]), async (req, res) => {
     console.log(`Document successfully uploaded: ${docName}`);
 
-    console.log(req.body);
+    //console.log(req.body);
 
-    console.log("------------------------------------------------------");
+    console.log("---------------------------------------------------------------------\n");
 
 
-    //do whatever convert process below and send the file
+    //Convert process below and send the file
     try {
         if (fileExists(__dirname + `/public/Document/${docName}`)) {
-            await convertWordToPdf(__dirname + `/public/Document/${docName}`, __dirname + `/public/Document/ConvertedDocToPDF.pdf`);
+            const docNameWithoutExtension = docName.replace(extname(docName), '');
+            await convertWordToPdf(__dirname + `/public/Document/${docName}`, __dirname + `/public/Document/${docNameWithoutExtension}`);
+            console.log("Document successfully converted");
             res.render("downloadDoc.ejs", {
-                filepath: `/Document/ConvertedDocToPDF.pdf`
+                filepath: `/Document/${docNameWithoutExtension}/${docNameWithoutExtension}.pdf`
             });
         }
         else {
-            res.send("<h1>UNSUCCESSFULL</h1>");
+            res.send("<h1>UNSUCCESSFUL: File not found</h1>");
         }
     } catch (error) {
         console.error("Failed to make conversion:", error.message);
+        res.send("<h1>UNSUCCESSFUL: Conversion failed</h1>");
     }
 
 
 });
+
+
+
 
 TestServer.listen(port, () => {
     console.log(`Listening on port ${port}`);
