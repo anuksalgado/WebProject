@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Word-Counter</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css"/>
+  </head>
+
+  <body>
+    <h1>Hello, This is a very simple word counter</h1>
+
+    <form id="wordForm">
+      <label for="Text">Enter text</label><br>
+      <input type="text" id="input">
+      <button id="get">Get word count</button>
+    </form>
+
+    <p id="wordCountResult"></p>
+
+    <script>
+      const getBtn = document.getElementById('get')
+      const wordForm = document.getElementById('wordForm');
+      const input = document.getElementById('input')
+      const wordCountResult = document.getElementById('wordCountResult');
+
+      const baseURL = 'http://localhost:8080/info';
+      getBtn.addEventListener('click', getInfo)
+      
+
+      async function getInfo(e) {
+      e.preventDefault();
+      try {
+        const res = await fetch(`${baseURL}/${encodeURIComponent(input.value)}`, {
+          method: 'GET',
+        });
+
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
+
+        const data = await res.json();
+        wordCountResult.innerText = `Word Count: ${data.wordCount}`;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+      async function postInfo(text) {
+        const res = await fetch(baseURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            text: text,
+          }),
+        });
+        const result = await res.json();
+        wordCountResult.innerText = `Word Count: ${result.wordCount}`;
+      }
+
+      wordForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        postInfo(input.value);
+      });
+    </script>
+  </body>
+</html>
