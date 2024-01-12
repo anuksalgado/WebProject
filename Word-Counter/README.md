@@ -4,4 +4,5 @@ public folder contains the front end HTML file namely index.html
 stylesheets folder contains the styling for the index.html inside public folder.
 
 # install the following packages 
-npm install express multer pdf-parse
+npm install express multer pdf-parse 
+# multer needed for file uploading
