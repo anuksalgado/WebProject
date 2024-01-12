@@ -1,67 +1,46 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Word-Counter</title>
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css"/>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Upload</title>
+</head>
+<body>
 
-  <body>
-    <h1>Hello, This is a very simple word counter</h1>
+  <h1>PDF Upload</h1>
 
-    <form id="wordForm">
-      <label for="Text">Enter text</label><br>
-      <input type="text" id="input">
-      <button id="get">Get word count</button>
-    </form>
+  <form id="uploadForm" action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="pdf" accept=".pdf" required> <!--required part makes sure file is submitted-->
+    <button type="submit">Upload PDF</button>
+  </form>
 
-    <p id="wordCountResult"></p>
+  <div id="result"></div>
 
-    <script>
-      const getBtn = document.getElementById('get')
-      const wordForm = document.getElementById('wordForm');
-      const input = document.getElementById('input')
-      const wordCountResult = document.getElementById('wordCountResult');
+  <script>
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
 
-      const baseURL = 'http://localhost:8080/info';
-      getBtn.addEventListener('click', getInfo)
-      
+      const formData = new FormData(this);
 
-      async function getInfo(e) {
-      e.preventDefault();
       try {
-        const res = await fetch(`${baseURL}/${encodeURIComponent(input.value)}`, {
-          method: 'GET',
-        });
-
-        if (!res.ok) {
-          throw new Error(`HTTP error! Status: ${res.status}`);
-        }
-
-        const data = await res.json();
-        wordCountResult.innerText = `Word Count: ${data.wordCount}`;
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    }
-
-      async function postInfo(text) {
-        const res = await fetch(baseURL, {
+        const response = await fetch('/upload', {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            text: text,
-          }),
+          body: formData,
         });
-        const result = await res.json();
-        wordCountResult.innerText = `Word Count: ${result.wordCount}`;
-      }
 
-      wordForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        postInfo(input.value);
-      });
-    </script>
-  </body>
+        if (response.ok) {
+          const data = await response.json();
+          document.getElementById('result').innerText = `Word Count: ${data.wordCount}`;
+        } else {
+          const errorData = await response.json();
+          alert(`Error: ${errorData.error}`);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An unexpected error occurred.');
+      }
+    });
+  </script>
+
+</body>
 </html>

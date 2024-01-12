@@ -7,6 +7,8 @@ const fs = require('fs');
 const upload = multer({ dest: 'uploads/' }); // Destination folder for uploaded files
 const app = express();
 
+app.use(express.static('public'));
+
 // ROute for the root path
 app.get('/', (req, res) => {
   res.send('This is the root path!');
