@@ -7,7 +7,7 @@ const fs = require('fs');
 const upload = multer({ dest: 'uploads/' }); // Destination folder for uploaded files
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static('public')); // use the public directory where html file is
 
 // ROute for the root path
 app.get('/', (req, res) => {

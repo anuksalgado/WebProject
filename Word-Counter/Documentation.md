@@ -19,3 +19,6 @@ https://reintech.io/blog/working-with-the-encodeuricomponent-method-as-javascrip
 
 MIME issue
 https://stackoverflow.com/questions/48248832/stylesheet-not-loaded-because-of-mime-type
+
+File uploading
+https://www.youtube.com/watch?v=i8yxx6V9UdM
