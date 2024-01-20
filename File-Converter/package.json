@@ -1,0 +1,22 @@
+{
+  "name": "file-converter",
+  "version": "1.0.0",
+  "description": "This folder is about the File converter back end and front end. Both teams will work on this at the same time. Use branching if needed",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build-css": "tailwindcss build src/styles.css -o public/styles/styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}

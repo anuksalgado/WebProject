@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Document</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body class="m-0 p-0">
+
+    <div id="thankyou" class="h-screen w-screen flex flex-col items-center justify-center gap-4">
+        <h1>Thank you for choosing WebProject!</h1>
+        <h2 id="button-heading">Click the button below to get PDF or Convert again</h2>
+        <div id="buttons" class="flex justify-center gap-4">
+            <a href="/"><button id="convert-again" class="border-2 border-black p-2">Convert Again</button></a>
+            <button id="downloadButton" class="border-2 border-black p-2">Get PDF</button>
+        </div>
+
+    </div>
+
+    <!-- <iframe id="pdfViewer" class="h-screen w-screen border-none hidden"></iframe> -->
+
+    <script type="text/javascript">
+        // To handle download
+        document.addEventListener("DOMContentLoaded", function () {
+            const filePath = "<%= filepath %>";
+            const downloadButton = document.getElementById('downloadButton');
+            const pdfViewer = document.getElementById('pdfViewer');
+
+            // Function to handle the download
+            function viewPDF() {
+                /*document.getElementById('thankyou').classList.add('hidden');
+                document.getElementById('pdfViewer').classList.remove('hidden');
+                pdfViewer.src = filePath;*/
+
+                window.open(filePath, '_blank');
+            }
+
+            downloadButton.addEventListener('click', viewPDF);
+
+
+        });
+    </script>
+
+</body>
+
+</html>
