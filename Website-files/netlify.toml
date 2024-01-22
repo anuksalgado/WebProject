@@ -1,3 +1,6 @@
 [build]
-  command = "npm run build-css" 
+  command = "npm run build-css"
   publish = "public"
+
+[build.environment]
+  NODE_VERSION = "14"  # Replace with your desired Node.js version
