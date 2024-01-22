@@ -1,4 +1,3 @@
 [build]
   command = "npm run build-css"
-  publish = "public"
-  functions = "netlify/functions"
+  publish = "Website-files/src"
