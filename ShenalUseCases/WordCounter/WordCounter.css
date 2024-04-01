@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    padding: 20px;
+    margin-left: 260px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: xx-large;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  .word-count {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
