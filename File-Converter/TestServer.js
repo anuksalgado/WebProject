@@ -16,7 +16,7 @@ const execPromise = util.promisify(exec); // creates a Promise-based version of 
 const __dirname = dirname(fileURLToPath(import.meta.url)); //To get the whole path upto working directory
 
 const TestServer = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 
