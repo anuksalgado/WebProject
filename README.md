@@ -1,6 +1,6 @@
 # 📚 Project Repository
 
-Welcome to the project repository! This repository contains all the necessary files, documentation, and learning materials related to the development of our website. Below is an overview of the repository structure:
+Welcome to the project repository! We have undertaken this web project in order to learn the full stack of web development. We are a group of frends who are in seperate countries and look forward to all the challenges web development brings! This repository contains all the necessary files, documentation, and learning materials related to the development of our website. Below is an overview of the repository structure:
 
 ## 📂 Folder Structure
 
