@@ -1,0 +1,1 @@
+This directory contains all documentation on the database to be built based on use cases
