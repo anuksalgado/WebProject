@@ -1,0 +1,22 @@
+{
+  "name": "file-converter",
+  "version": "1.0.0",
+  "description": "This folder is about the File converter back end and front end. Both teams will work on this at the same time. Use branching if needed",
+  "main": "TestServer.js",
+  "type": "module",
+  "scripts": {
+    "start": "node file-converter.js",
+    "dev": "nodemon file-converter.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.0.3"
+  }
+}
